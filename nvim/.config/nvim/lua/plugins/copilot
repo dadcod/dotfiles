@@ -1,0 +1,8 @@
+return {
+  {
+    "github/copilot.vim",
+    config = function()
+      -- Optional: Additional configuration can be placed here
+    end,
+  },
+}

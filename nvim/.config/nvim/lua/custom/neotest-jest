@@ -1,0 +1,11 @@
+require "neotest-jest" {
+  jestCommand = function()
+    local file_path = vim.fn.expand "%:p"
+    local project_name = get_project_name(file_path)
+    if project_name ~= "" then
+      return "node --inspect-brk ./node_modules/.bin/jest --runInBand"
+    else
+      return "node --inspect-brk ./node_modules/.bin/jest --runInBand"
+    end
+  end,
+}

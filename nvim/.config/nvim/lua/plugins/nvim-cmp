@@ -1,0 +1,36 @@
+return {
+  "hrsh7th/nvim-cmp",
+  dependencies = {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    "onsails/lspkind.nvim",
+    -- ... other dependencies
+  },
+  opts = function()
+    local cmp = require "cmp"
+    local lspkind = require "lspkind"
+    local tailwindcss_colorizer_cmp = require "tailwindcss-colorizer-cmp"
+
+    return {
+      -- ... other options
+      formatting = {
+        format = function(entry, vim_item)
+          -- Tailwind CSS colorizer
+          vim_item = tailwindcss_colorizer_cmp.formatter(entry, vim_item)
+          -- lspkind icons
+          vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+          return vim_item
+        end,
+      },
+      mapping = cmp.mapping.preset.insert {
+        -- ... your mappings
+      },
+      sources = cmp.config.sources {
+        { name = "luasnip", priority = 1000 }, -- Set a high priority for snippets
+        { name = "nvim_lsp", priority = 900 },
+        { name = "buffer", priority = 800 },
+        { name = "path", priority = 700 },
+        -- ... other sources
+      },
+    }
+  end,
+}

@@ -1,0 +1,3 @@
+return {
+  "haydenmeade/neotest-jest",
+}
