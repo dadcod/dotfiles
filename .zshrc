@@ -130,10 +130,8 @@ function nvims () {
   NVIM_APPNAME=$config nvim
 }
 
-fastfetch -c ~/.config/fastfetch/config.jsonc
 
-GOPATH=$HOME/go
-export GOPATH
+GOPATH="/opt/homebrew/bin/go"
 export PATH=$PATH:$GOPATH/bin
 
 JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
@@ -144,8 +142,23 @@ export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 export LANG=en_US.UTF-8
 
+export SDKMAN_DIR="/opt/homebrew/opt/sdkman-cli/libexec"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by Windsurf
+export PATH="/Users/rosenpetkov/.codeium/windsurf/bin:$PATH"
+export PATH=$HOME/go/bin:$PATH
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+fastfetch -c ~/.config/fastfetch/config.jsonc
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

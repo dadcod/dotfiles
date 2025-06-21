@@ -131,10 +131,10 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     alt-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    alt-h = 'focus left'
-    alt-j = 'focus down'
-    alt-k = 'focus up'
-    alt-l = 'focus right'
+    cmd-alt-h = 'focus left'
+    cmd-alt-j = 'focus down'
+    cmd-alt-k = 'focus up'
+    cmd-alt-l = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
@@ -146,8 +146,8 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     ctrl-cmd-l = 'resize smart -50'
     ctrl-cmd-h = 'resize smart +50'
 
-    alt-left = 'workspace prev'
-    alt-right= 'workspace next'
+    ctrl-left = 'workspace prev'
+    ctrl-right= 'workspace next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     ctrl-shift-1 = 'workspace 1'
@@ -180,6 +180,9 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     alt-shift-semicolon = 'mode service'
 
     alt-shift-f = 'fullscreen'
+
+    cmd-h = [] # Disable "hide application"
+    # cmd-alt-h = [] # Disable "hide others"
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
